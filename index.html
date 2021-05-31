@@ -1,0 +1,75 @@
+<html>
+
+    <script> 
+        function Events(name,date,venue)
+		{
+         	this.name=name;
+             this.date=date;
+            this.venue=venue;
+		}
+
+function array1()
+	{
+		var arr1 =  new Array();
+		var data= new Events("Birday Parties","20/2/2018","HR Palace");
+		arr1.push(data);
+		var data1= new Events("Product Launches","21/2/2018","Lemerdian Hotel");
+		arr1.push(data1);
+		return arr1;
+	}
+
+function array2()
+	{
+	
+		var arr2 =  new Array();
+		var data= new Events("Webminar","5/6/2018","Auditorium");
+		arr2.push(data);
+		var data1= new Events( "Marriage","22/7/2018","KV Mahal");
+		arr2.push(data1);
+		return arr2;
+     }
+    
+	function array3()
+	{
+	
+		var arr3 =  new Array();
+		var data= new Events("Award Ceremony","8/2/2018","Auditorium");
+		arr3.push(data);
+		var data1= new Events("Corporate Events","10/2/2018","KVM hotel");
+		arr3.push(data1); 
+	        return arr3;
+	}
+
+function merge()
+{
+
+ 
+   var res = array3().concat(array1(),array2());
+ 
+  var table ="<table id='resultTable'><tr><th>Event Name</th><th>Date</th><th>Venue</th></tr>";  
+    for(var i=0; i<res.length; i++)
+    {
+          
+    table +="<tr><td>"+res[i].name+"</td><td>"+res[i].date+"</td><td>"+res[i].venue+"</td></tr>";
+    
+    }
+   document.getElementById("result").innerHTML= table+"</table>";
+}
+    </script>
+      
+   
+
+ <body>
+    <h2>Frag Event Organizer</h2>
+    <br>
+    <button id="mergeArray" onclick="merge()">Merge Arrays</button>
+    <br>
+    <div id="result">
+    <table id="resultTable">
+        
+    </table>
+
+    </div>
+    
+</body>
+</html>
